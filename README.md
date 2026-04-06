@@ -1,6 +1,6 @@
 # Event-Driven Data Pipeline in Databricks
 
-An end-to-end **event-driven data engineering pipeline** built using **Databricks (dbx)**. The pipeline ingests raw data across multiple business domains, validates and enriches it, and writes clean, merged output to Delta Lake tables.
+An end-to-end **event-driven data engineering pipeline** built using **Databricks (dbx)**. The pipeline ingests raw data across Multi-entity data ingestion, validates and enriches it, and writes clean, merged output to Delta Lake tables.
 
 ## 🔧 Tech Stack
 - Databricks (Apache Spark)
@@ -12,18 +12,18 @@ An end-to-end **event-driven data engineering pipeline** built using **Databrick
 
 | Notebook | Description |
 |---|---|
-| `customers data stage load` | Loads raw customer data into staging |
-| `orders data stage load` | Loads raw orders data into staging |
-| `inventory data stage load` | Loads raw inventory data into staging |
-| `product data stage load` | Loads raw product data into staging |
-| `shipping data stage load` | Loads raw shipping data into staging |
+| `customers data stage load` | Validates customer data at file level, then loads into staging table |
+| `orders data stage load` | Validates orders data at file level, then loads into staging table |
+| `inventory data stage load` | Validates inventory data at file level, then loads into staging table |
+| `product data stage load` | Validates product data at file level, then loads into staging tableg |
+| `shipping data stage load` | Validates shipping data at file level, then loads into staging table |
 | `Data Validation and Cross - Reference` | Validates data quality and cross-references across domains |
 | `Data_Enrichment_and_Business_Intelligence` | Applies business logic and enriches data |
 | `Final_merge_operation` | Performs final Delta merge/upsert |
 
 ## 📌 Key Concepts Covered
 - Event-driven pipeline design
-- Multi-domain data ingestion
+- Multi-entity data ingestion from Azure Data Lake Storage Gen2 
 - Data validation and cross-reference checks
 - Delta Lake merge (upsert) operations
 - Business intelligence aggregations
